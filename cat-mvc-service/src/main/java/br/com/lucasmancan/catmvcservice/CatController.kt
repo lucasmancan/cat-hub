@@ -1,6 +1,5 @@
 package br.com.lucasmancan.catmvcservice
 
-import br.com.lucasmancan.CatJpaEntity
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.*
 class CatController(private val catService: CatService) {
 
     @GetMapping("{id}")
-    fun findById(id: Long): ResponseEntity<Any> {
+    fun findById(@PathVariable("id") id: Long): ResponseEntity<Any> {
 
         val cat = catService.findById(id)
 

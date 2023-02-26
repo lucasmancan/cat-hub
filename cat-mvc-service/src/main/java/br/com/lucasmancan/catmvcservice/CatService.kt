@@ -1,6 +1,5 @@
 package br.com.lucasmancan.catmvcservice
 
-import br.com.lucasmancan.CatJpaEntity
 import org.springframework.stereotype.Service
 
 @Service

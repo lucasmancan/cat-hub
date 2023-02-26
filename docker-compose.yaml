@@ -26,7 +26,7 @@ services:
       - './docker/db/my.cnf:/etc/mysql/conf.d/my.cnf'
       - './docker/db/sql:/docker-entrypoint-initdb.d'
   mvc-app:
-    image: cat-mvc-service:0.01
+    image: cat-mvc-service:latest
     container_name: cat-mvc-service
     depends_on:
       - db
@@ -51,7 +51,7 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_PORT: 3306
   reactive-app:
-    image: cat-reactive-service:0.01
+    image: cat-reactive-service:latest
     container_name: cat-reactive-service
     depends_on:
       - db
@@ -69,7 +69,7 @@ services:
           memory: 1024M
 
     ports:
-      - "9090:9091"
+      - "9091:9090"
     environment:
       MYSQL_HOST: db
       MYSQL_USER: root
