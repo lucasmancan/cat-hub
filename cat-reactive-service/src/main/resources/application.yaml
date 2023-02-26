@@ -1,0 +1,24 @@
+spring:
+  r2dbc:
+    password: ${MYSQL_USER:root}
+    username: ${MYSQL_PASSWORD:root}
+    url: r2dbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/sandbox?createDatabaseIfNotExist=true
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        format_sql: true
+    database: mysql
+    generate-ddl: true
+    show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics
+  endpoint:
+    metrics:
+      enabled: 'true'
+server:
+  port: 9090
