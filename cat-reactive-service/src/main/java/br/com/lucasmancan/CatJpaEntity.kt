@@ -9,7 +9,7 @@ import org.springframework.data.relational.core.mapping.Table
 @Table(name = "cats")
 data class CatJpaEntity(
     @Id
-    val id: Int? = null,
+    val id: Long? = null,
     val name: String? = null,
     val age: Int? = null
 )

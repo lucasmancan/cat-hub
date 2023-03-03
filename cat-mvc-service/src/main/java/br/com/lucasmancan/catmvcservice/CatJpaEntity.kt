@@ -12,7 +12,7 @@ import javax.persistence.Table
 data class CatJpaEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int? = null,
+    val id: Long? = null,
     val name: String? = null,
     val age: Int? = null
 )

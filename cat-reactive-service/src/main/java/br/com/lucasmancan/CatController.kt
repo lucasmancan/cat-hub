@@ -28,6 +28,9 @@ class CatController(private val catService: CatService) {
 
     @PostMapping
     suspend fun save(@RequestBody catJpaEntity: CatJpaEntity): CatJpaEntity {
-        return catService.save(catJpaEntity)
+        val cat = catService.save(catJpaEntity)
+
+        println("Gato cadastrado no serviço reativo ${cat.id}")
+        return cat
     }
 }

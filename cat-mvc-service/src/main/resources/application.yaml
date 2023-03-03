@@ -29,10 +29,10 @@ spring:
     properties:
       hibernate:
         ddl-auto: update
-        format_sql: true
+        format_sql: false
     database: mysql
     generate-ddl: true
-    show-sql: true
+    show-sql: false
 management:
   endpoints:
     web:
@@ -40,6 +40,6 @@ management:
         include: metrics
   endpoint:
     metrics:
-      enabled: 'true'
+      enabled: 'false'
 server:
   port: 9090
